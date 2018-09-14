@@ -36,5 +36,3 @@ if tweet_one.length > 140
 else
   tweet_one
     end
-  end
-end
