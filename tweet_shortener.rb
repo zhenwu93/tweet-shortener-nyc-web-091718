@@ -1,4 +1,3 @@
-def dictionary
 dictionary = {
   "too" => "2",
   "to" => "2",
@@ -13,8 +12,12 @@ dictionary = {
 end
 
 def word_substituter(tweet)
-  new_tweet = tweet.split.map! do |word|
-    dictionary(word)
+  long_words = tweet.split.collect do |word|
+    if dictionary.keys.include?(word.downcase)
+      word = dictionary[word.downcase]
+    else
+      word
+    end
   end
-  new_tweet.join(" ")
+  long_words.join(" ")
 end
