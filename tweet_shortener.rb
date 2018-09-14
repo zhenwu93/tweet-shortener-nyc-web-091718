@@ -17,16 +17,16 @@ def word_substituter(tweet)
     string.split.collect do |word|
     if dictionary.keys.include?(word.downcase)
       word = dictionary[word.downcase]
-    else 
-      word 
-    end 
+    else
+      word
+    end
 end
 
 def bulk_tweet_shortener(tweets)
   tweets.each do |tweet|
     tweet = word_substituter(tweet)
     puts "#{tweet}"
-  end 
+  end
 end
 
 def selective_tweet_shortener(tweet)
@@ -39,7 +39,7 @@ end
 
 def shortened_tweet_truncator(tweet)
   tweet = selective_tweet_shortener(tweet)
-  if tweet.length > 140 
+  if tweet.length > 140
     tweet[0..136] + "..."
   else
     tweet
